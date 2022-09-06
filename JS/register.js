@@ -20,11 +20,11 @@ document.querySelector('#btnSubmit').onclick = function() {
         var confirm_pass = document.querySelector('#Passconfirm').value;
         if (pass != confirm_pass) {
 
-            document.querySelector('erPassconfirm').innerHTML = '☒ Use same password';
+            document.querySelector('#erPassconfirm').innerHTML = '☒ Use same password';
 
         } else {
 
-            document.querySelector('erPassconfirm').innerHTML =
+            document.querySelector('#erPassconfirm').innerHTML =
                 '🗹 Password Matched';
 
         }
