@@ -12,9 +12,7 @@
 
 ### Demo website follow this link: https://capstone2-project.vercel.app/
 
-### A brief look at the project
 
-# ABOUT PAGE
 
 
 
