@@ -44,29 +44,6 @@ function kiemTraEmail(value, selectorError, name) {
     return false;
 }
 
-function kiemTraDoDai(value, selectorError, name, minLength, maxLength) {
-    if (value.length > maxLength || value.length < minLength) {
-        document.querySelector(selectorError).innerHTML =
-            name + " từ " + minLength + " đến " + maxLength + " ký tự !";
-        return false;
-    }
-    document.querySelector(selectorError).innerHTML = "";
-    return true;
-}
-
-function kiemTraGiaTri(value, selectorError, name, minValue, maxValue) {
-    if (
-        Number(value) < minValue ||
-        Number(value) > maxValue ||
-        value.trim() === " "
-    ) {
-        document.querySelector(selectorError).innerHTML =
-            name + " từ " + minLength + " đến " + maxLength + " !";
-        return false;
-    }
-    document.querySelector(selectorError).innerHTML = "";
-    return true;
-}
 
 function kiemTraMatKhau(value, selectorError, name) {
     var regex =
