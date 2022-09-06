@@ -1,9 +1,6 @@
 function kiemTraRong(value, selectorError, name) {
     if (value.trim() === "") {
-        document.querySelector(selectorError).innerHTML =
-            name + ' không được bỏ trống';
-        // alert("'name + ' không được bỏ trống");
-
+        document.querySelector(selectorError).innerHTML = name + 'không được bỏ trống!';
         return false;
     }
     document.querySelector(selectorError).innerHTML = "";
@@ -56,13 +53,4 @@ function kiemTraMatKhau(value, selectorError, name) {
         name +
         "password phải dài từ 8-10 ký tự, và chứa ít nhất 1 viết hoa, 1 viết thường, 1 số và 1 ký tự đặc biệt";
     return false;
-}
-
-function check_pass(value1, value2, selectorError) {
-    if (document.getElementById(value1).value ==
-        document.getElementById(value2).value) {
-        document.getElementById(selectorError).disabled = false;
-    } else {
-        document.getElementById(selectorError).disabled = true;
-    }
 }

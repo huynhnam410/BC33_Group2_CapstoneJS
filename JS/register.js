@@ -1,49 +1,69 @@
 document.querySelector('#btnSubmit').onclick = function() {
     //Lấy thông tin input từ người dùng: tạo ra format backend yêu cầu
-    var CRregister = new register();
-    CRregister.name = document.querySelector('#txtName').value;
-    CRregister.email = document.querySelector('#txtEmail').value;
-    CRregister.password = document.querySelector('#txtPassword').value;
-    CRregister.passwordConfirm = document.querySelector('#txtPassconfirm').value;
-    CRregister.phone = document.querySelector('#txtPhone').value;
-    CRregister.gender = document.querySelector('#txtGender').value;
+    var user = new register();
+    user.email = document.querySelector('#email').value;
+    user.name = document.querySelector('#name').value;
+    user.password = document.querySelector('#pass').value;
+    user.phone = document.querySelector('#phone').value;
 
 
-    console.log('register', CRregister);
+    if (document.querySelector('#male').checked === true) {
+        user.gender = true;
+    };
+    if (document.querySelector('#female').checked === false) {
+        user.gender = false;
+    };
 
-    var valid = true;
-    valid &=
-        kiemTraRong(CRregister.name, '#erName', "Tên") & kiemTraRong(CRregister.email, '#erEmail', "Email") & kiemTraRong(CRregister.password, '#erPassword', "Password") & kiemTraRong(CRregister.password, '#erPassconfirm', "Password confirm") & kiemTraRong(CRregister.phone, '#erPhone', "Phone");
+    function password_confirm() {
 
-    valid &= kiemTraKyTu(CRregister.name, '#erName', "Tên");
+        var pass = document.querySelector('#pass').value;
+        var confirm_pass = document.querySelector('#Passconfirm').value;
+        if (pass != confirm_pass) {
 
-    valid &= kiemTraEmail(CRregister.email, '#erEmail', "Email");
+            document.querySelector('erPassconfirm').innerHTML = '☒ Use same password';
 
-    valid &= kiemTraSo(CRregister.phone, '#erPhone', "Phone");
+        } else {
 
-    valid &= kiemTraMatKhau(CRregister.password, '#erPassword', "Password") & kiemTraMatKhau(CRregister.password, '#erPassconfirm', )
+            document.querySelector('erPassconfirm').innerHTML =
+                '🗹 Password Matched';
 
-
-    // valid &= check_pass('#erPassword', '#erPassconfirm', )
-
-    if (!valid) {
-        return;
+        }
     }
+    password_confirm();
 
+    // var valid = true;
+    // valid &=
+    //     kiemTraRong(CRregister.name, '#erName', "Tên") & kiemTraRong(CRregister.email, '#erEmail', "Email") & kiemTraRong(CRregister.password, '#erPassword', "Password") & kiemTraRong(CRregister.phone, '#erPhone', "Phone");
+
+    // valid &= kiemTraKyTu(CRregister.name, '#erName', "Tên");
+
+    // valid &= kiemTraEmail(CRregister.email, '#erEmail', "Email");
+    // valid &= kiemTraMatKhau(CRregister.password, '#erPassword', "mật khẩu") & kiemTraMatKhau(CRregister.passwordConfirm, '#erPassconfirm', "mật khẩu");
+
+    // valid &= kiemTraSo(CRregister.phone, '#erPhone', "Phone");
+
+
+    // // valid &= check_pass('#erPassword', '#erPassconfirm', )
+
+    // if (!valid) {
+    //     return;
+    // }
+
+    console.log('register', user);
     //Gọi api đưa dữ liệu về server
-    var input = axios({
-        url: 'https://shop.cyberlearn.vn/api/Users/signin',
+    var promise = axios({
+        url: 'https://shop.cyberlearn.vn/api/Users/signup',
         method: 'POST',
-        data: CRregister,
-    });
+        data: user
+    })
 
-    input.then(function(result) {
+    promise.then(function(result) {
         console.log(result.data);
         alert("success");
 
     });
 
-    input.catch(function(error) {
+    promise.catch(function(error) {
         console.log(error);
     })
 }
