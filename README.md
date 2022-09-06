@@ -10,13 +10,13 @@
 # III. About project
     - Project sử dụng các kỹ năng từ đầu course: html, css, github, js, api, sass, responsive.
 
-### Demo website follow this link: 
+### Demo website follow this link: https://capstone2-project.vercel.app/
 
 ### A brief look at the project
 
 # ABOUT PAGE
 
-### *For more detail, follow this link:* 
+
 
 
 
