@@ -1,0 +1,87 @@
+    @import '../Base/customize';
+    @import '../Helpers/Variables';
+    @import '../Helpers/mixin';
+    //header
+    @import '../Layouts/header';
+    //footer
+    @import '../Layouts/footer';
+    main {
+        .container {
+            h1 {
+                text-align: center;
+                padding: 30px 0;
+            }
+            .form_content {
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                align-content: space-between;
+                @media screen and(max-width: 756px) {
+                    display: inline;
+                }
+                .form_group {
+                    .input {
+                        width: 90%;
+                        font-size: $fs-c5;
+                        font-weight: $fw-regular;
+                        color: $text-color-c0;
+                        line-height: $text-line;
+                        border: none;
+                        outline: none;
+                        background-color: $bg-color-primary;
+                        margin-right: 50px;
+                        border-bottom: 5px solid $bg-color-c3;
+                        margin-bottom: 10px;
+                        &::placeholder {
+                            color: $text-color-c0;
+                        }
+                        @media screen and(max-width:756px) {
+                            width: 90%;
+                            font-size: $fs-c2;
+                            line-height: normal;
+                            overflow: hidden;
+                        }
+                        @media only screen and (max-width: 1020px) {
+                            width: 80%;
+                            font-size: $fs-c3;
+                            line-height: normal;
+                            overflow: hidden;
+                        }
+                        ;
+                        @media only screen and (max-width: 1024px) {
+                            overflow: hidden;
+                        }
+                        ;
+                    }
+                    .button {
+                        text-align: left;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .printError {
+                        display: block;
+                        color: $text-color-c6;
+                    }
+                }
+            }
+            .form_button {
+                text-align: right;
+                padding-right: 200px;
+                @media screen and(max-width: 756px) {
+                    text-align: center;
+                    padding: 0;
+                }
+                @media only screen and (max-width: 1020px) {
+                    text-align: center;
+                    padding: 0;
+                }
+                .submit {
+                    padding: 8px 90px;
+                    background-color: $bg-color-c3;
+                    color: $text-color-c3;
+                    border: 0;
+                    margin-bottom: 70px;
+                }
+            }
+        }
+    }

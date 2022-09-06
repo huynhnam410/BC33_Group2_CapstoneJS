@@ -1,0 +1,11 @@
+@import '../Helpers/Variables';
+.back-to-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+.back-to-top i {
+    color: $text-color-c0;
+    font-size: $fs-c5;
+}

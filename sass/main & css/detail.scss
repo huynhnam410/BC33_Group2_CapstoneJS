@@ -1,19 +1,14 @@
 //base
 @import '../Base/customize';
-
-
 //helpers
 @import '../Helpers/Variables';
 @import '../Helpers/mixin';
-
 //header
 @import '../Layouts/header';
-
 //productDetail
 @import '../Layouts/productDetail';
-
 //related-product
 @import '../Layouts/realateProduct';
-
 //footer
 @import '../Layouts/footer';
+@import './backtotp.scss';

@@ -1,0 +1,10 @@
+.back-to-top {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+.back-to-top i {
+  color: #000000;
+  font-size: 30px;
+}
