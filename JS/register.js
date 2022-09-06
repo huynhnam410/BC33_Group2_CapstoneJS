@@ -18,7 +18,7 @@ document.querySelector('#btnSubmit').onclick = function() {
 
         var pass = document.querySelector('#pass').value;
         var confirm_pass = document.querySelector('#Passconfirm').value;
-        if (pass != confirm_pass) {
+        if (pass !== confirm_pass) {
 
             document.querySelector('#erPassconfirm').innerHTML = '☒ Use same password';
 
@@ -31,24 +31,7 @@ document.querySelector('#btnSubmit').onclick = function() {
     }
     password_confirm();
 
-    // var valid = true;
-    // valid &=
-    //     kiemTraRong(CRregister.name, '#erName', "Tên") & kiemTraRong(CRregister.email, '#erEmail', "Email") & kiemTraRong(CRregister.password, '#erPassword', "Password") & kiemTraRong(CRregister.phone, '#erPhone', "Phone");
-
-    // valid &= kiemTraKyTu(CRregister.name, '#erName', "Tên");
-
-    // valid &= kiemTraEmail(CRregister.email, '#erEmail', "Email");
-    // valid &= kiemTraMatKhau(CRregister.password, '#erPassword', "mật khẩu") & kiemTraMatKhau(CRregister.passwordConfirm, '#erPassconfirm', "mật khẩu");
-
-    // valid &= kiemTraSo(CRregister.phone, '#erPhone', "Phone");
-
-
-    // // valid &= check_pass('#erPassword', '#erPassconfirm', )
-
-    // if (!valid) {
-    //     return;
-    // }
-
+    //
     console.log('register', user);
     //Gọi api đưa dữ liệu về server
     var promise = axios({
